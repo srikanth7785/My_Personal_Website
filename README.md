@@ -1,4 +1,4 @@
-# :dizzy: My-Personal-Website.. :sparkles:
+# :dizzy: My_Personal_Website :sparkles:
 
 A new Flutter project.
 
