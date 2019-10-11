@@ -1,6 +1,8 @@
 # :dizzy: My_Personal_Website :sparkles:
 
-A new Flutter project.
+Repository for source code of My_Personal_Website.
+
+Link: https://srikanth7785.github.io/#/
 
 ## Getting Started
 
