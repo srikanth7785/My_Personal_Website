@@ -2,7 +2,7 @@
 
 Repository for source code of My_Personal_Website.
 
-    Link: https://srikanth7785.github.io
+Link: https://srikanth7785.github.io
 
 It is just the First Version..fully featured one will be made soon.:heart_eyes: 
 
