@@ -4,21 +4,40 @@ import 'dart:html' as html;
 class Aboutme extends StatelessWidget {
 
   final List<Widget> profileButtons = [
-    OutlineButton(
-      child: Text("  GitHub  ",style: TextStyle(color: Colors.blue)),
-      onPressed: ()=> html.window.open("https://www.github.com/srikanth7785", "GitHub Profile"),
+    Padding(
+      padding: const EdgeInsets.only(left: 8.0),
+      child: OutlineButton(
+        child: Text("  GitHub  ",style: TextStyle(color: Colors.blue)),
+        onPressed: ()=> html.window.open("https://www.github.com/srikanth7785", "GitHub Profile"),
+      ),
     ),
-    OutlineButton(
-      child: Text("Hackerrank",style: TextStyle(color: Colors.blue)),
-      onPressed: ()=> html.window.open("https://www.hackerrank.com/srikanth7785", "Hackerrank Profile"),
+    Padding(
+      padding: const EdgeInsets.only(left: 8.0),
+      child: OutlineButton(
+        child: Text(" Linkedin ",style: TextStyle(color: Colors.blue)),
+        onPressed: ()=> html.window.open("https://www.linkedin.com/in/vanamalasrikanth", "LinkedIn Profile"),
+      ),
     ),
-    OutlineButton(
-      child: Text(" Linkedin ",style: TextStyle(color: Colors.blue)),
-      onPressed: ()=> html.window.open("https://www.linkedin.com/in/vanamalasrikanth", "LinkedIn Profile"),
+    Padding(
+      padding: const EdgeInsets.only(left: 8.0),
+      child: OutlineButton(
+        child: Text("Gmaterials",style: TextStyle(color: Colors.blue)),
+        onPressed: ()=> html.window.open("https://play.google.com/store/apps/details?id=com.we.intialp", "Gmaterials on Play Store"),
+      ),
     ),
-    OutlineButton(
-      child: Text("  Othello ",style: TextStyle(color: Colors.blue)),
-      onPressed: ()=> html.window.open("https://play.google.com/store/apps/details?id=com.srikanth7785.othello", "Othello"),
+    Padding(
+      padding: const EdgeInsets.only(left: 8.0),
+      child: OutlineButton(
+        child: Text("  Othello ",style: TextStyle(color: Colors.blue)),
+        onPressed: ()=> html.window.open("https://play.google.com/store/apps/details?id=com.srikanth7785.othello", "Othello"),
+      ),
+    ),
+    Padding(
+      padding: const EdgeInsets.only(left: 8.0),
+      child: OutlineButton(
+        child: Text("Gmaterials (Web Version)",style: TextStyle(color: Colors.blue)),
+        onPressed: ()=> html.window.open("https://wedevelopers.github.io/", "Gmaterials(Web Version)"),
+      ),
     ),
   ];
 
@@ -58,7 +77,7 @@ class Introduction extends StatelessWidget
   profileImage(context) => Container(
   height: width < 440 ? height * 0.25 : width * 0.25,
   width: width < 440 ? height * 0.25 : width * 0.25,
-
+  margin: EdgeInsets.only(left: 80.0),
   decoration: BoxDecoration(
     shape: BoxShape.circle,
     image: DecorationImage(

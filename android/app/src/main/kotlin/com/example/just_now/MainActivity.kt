@@ -1,4 +1,4 @@
-package com.example.just_now
+package com.srikanth7785.portfolio
 
 import android.os.Bundle
 
