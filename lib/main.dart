@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import './trial.dart';
+import 'home.dart';
 
-main()
-{
+void main() {
   runApp(MyApp());
 }
 
@@ -10,12 +9,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      onGenerateTitle: (context) => "Vanamala Srikanth",
+      debugShowCheckedModeBanner: false,
+      title: 'Vanamala Srikanth',
       theme: ThemeData(
-        brightness: Brightness.dark,
-        primaryColorDark: Colors.black,
+        primarySwatch: Colors.deepOrange,
+        textTheme: TextTheme(
+         bodyText2: TextStyle(color: Colors.white),
+        ),
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Aboutme(),
+      home: MyHomePage(),
     );
   }
 }
