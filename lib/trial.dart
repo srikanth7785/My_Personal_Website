@@ -91,7 +91,7 @@ class Introduction extends StatelessWidget
   profileInfo() => Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
-      Text("Hello there! I am",
+      Text("Hello there👋! I am",
       // textScaleFactor: 2,
       style: TextStyle(color: Colors.blue,
         fontSize: width < 440 ? (width * 0.075) * 0.6 : width > 1000 ? (width * 0.02) * 0.6 : (width * 0.035) * 0.6,
