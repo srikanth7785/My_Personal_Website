@@ -1,12 +1,28 @@
+import 'dart:async';
+
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Introduction extends StatelessWidget {
+class Introduction extends StatefulWidget {
   final bool isMobile;
   final Size size;
   Introduction(this.isMobile,this.size);
+
+  @override
+  _IntroductionState createState() => _IntroductionState();
+}
+
+class _IntroductionState extends State<Introduction> {
+
+  bool animate = false;
+
+  void initState(){
+    super.initState();
+    Timer(Duration(milliseconds: 5), () => setState(() => animate = true));
+  }
 
   name(){
     return Padding(
@@ -15,7 +31,9 @@ class Introduction extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Container(
+          AnimatedContainer(
+            duration: Duration(seconds: 1),
+          // Container(
             decoration: BoxDecoration(
               border: Border.all(
                 width: 1.0,
@@ -28,14 +46,12 @@ class Introduction extends StatelessWidget {
                 ),
               ),
             ),
-            width: isMobile ? 150.0 : size.width * 0.1,
-            height: isMobile ? 150.0 : size.width * 0.1,
+            width: animate ? widget.isMobile ? 150.0 : widget.size.width * 0.1 : 5.0,
+            height: animate ? widget.isMobile ? 150.0 : widget.size.width * 0.1 : 5.0,
           ),
           SizedBox(height: 10.0,),
           Text("Vanamala Srikanth",style: GoogleFonts.aBeeZee(fontSize: 25.0,fontWeight: FontWeight.normal),),
-          // SizedBox(height: 5.0,),
-          Text(" Undergrad at GITAM 👨‍🎓 | Flutter Enthusiast 👀 ",style: GoogleFonts.lato(fontSize: 10.0)),
-          // SizedBox(height: 5.0,),
+          Text("Flutter Enthusiast 👀 | Undergrad at GITAM 👨‍🎓",style: GoogleFonts.lato(fontSize: 10.0)),
           socialMedia(),
         ],
       ),
@@ -47,15 +63,25 @@ class Introduction extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          '''I'm an Android Developer\n\tInspired by the cross platform functionality of Flutter\n\t\t'''
-          '''As it can be used to develop Andriod,iOS and WEB Applications as well🤩.\n\n'''
-          '''I have good experience in Android development, again..with Flutter.\n\tI don't own a Mac, so, I'm not familiar with IOS side, but, that's not a big deal though.\n\n'''
-          '''I also have a couple of apps on Google Play Store developed with Flutter,\n\t with good number of downloads, active users and rating for each of them.''',
-          // style: TextStyle(fontSize: isMobile ? 12.0 : size.width * 0.012,color: Colors.white,fontWeight: FontWeight.w100,fontStyle: FontStyle.italic),
-          style: GoogleFonts.lato(
-            fontSize: isMobile ? 12.0 : size.width * 0.012,
-          ),
+        // Text(
+        //   '''I'm an Android Developer\n\tInspired by the cross platform functionality of Flutter\n\t\t'''
+        //   '''As it can be used to develop Andriod,iOS and Web Applications as well🤩.\n\n'''
+        //   '''I have good experience in Android development, with Flutter.\n\n'''
+        //   '''I also have a couple of apps on Google Play Store developed with Flutter,\n\t\t with good number of downloads, active users and rating for each of them.''',
+        //   style: GoogleFonts.lato(
+        //     fontSize: widget.isMobile ? 12.0 : widget.size.width * 0.012,
+        //   ),
+        // ),
+        TypewriterAnimatedTextKit(
+          totalRepeatCount: 1,
+          speed: Duration(milliseconds: 50),
+          displayFullTextOnTap: true,
+          text: [
+          "I'm an Android Developer\n\tInspired by the cross platform functionality of Flutter\n\t\t"
+          "As it can be used to develop Andriod,iOS and Web Applications as well🤩.\n\n"
+          "I have good experience in Android development, with Flutter.\n\n"
+          "I also have a couple of apps on Google Play Store developed with Flutter,\n\t\t with good number of downloads, active users and rating for each of them.",
+          ],
         ),
       ],
     );
@@ -109,7 +135,7 @@ class Introduction extends StatelessWidget {
       "writing.jpg",
       alignment: Alignment.centerRight,
       width: double.maxFinite,
-      height: isMobile ? imageHeightonMobile : 300.0,
+      height: widget.isMobile ? imageHeightonMobile : 300.0,
       fit: BoxFit.cover,
     );
   }
@@ -117,14 +143,14 @@ class Introduction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: isMobile ? 510.0 : 300.0,
+      height: widget.isMobile ? 510.0 : 300.0,
       child: Stack(
         children: [
           firstBackgroundImage(510.0),
           Container(
             color: Colors.black54,
             width: double.maxFinite,
-            child: isMobile ? Column(
+            child: widget.isMobile ? Column(
               children:[
                 name(),
                 Divider(
